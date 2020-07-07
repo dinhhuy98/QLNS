@@ -34,6 +34,7 @@ namespace QuanLyNhanSu.Controllers
         [Microsoft.AspNetCore.Cors.EnableCors("AllowAllOrigins")]
         public void Post([FromBody] Employee employee)
         {
+            employee.employeeId = "MF" + new Random().Next(10000);
             Entity.ListEmployee.Add(employee);
         }
 
